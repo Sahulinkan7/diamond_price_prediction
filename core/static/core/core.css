@@ -7,3 +7,7 @@ html,body{
 .container{
     min-height: 100%;
 }
+
+.errors{
+    color:rgb(179, 40, 40);
+}

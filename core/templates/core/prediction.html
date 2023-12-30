@@ -2,26 +2,40 @@
 
 {% block content %}
 
-    
-
     <div class="row mt-5">
-        <div class="col">
+        <div class="col-2">
 
         </div>
-        <div class="col">
-            <div class="card">
-                <h4 class="text-center mt-2">Predict diamond price of your choice</h4>
-                <div class="card-body">
-                    <form action="" method="post">
+        <div class="col-8">
+            <div class="card shadow">
+                <h4 class="text-center mt-2">Predict diamond price of your own choice</h4>
+                <div class="card-body p-4">
+                    <form action="" method="post" novalidate>
                         {% csrf_token %}
-                        <input type="submit" class="btn btn-primary form-control" value="Predict diamond price">
+                        <div class="row">
+                            {% for field in form %}
+                            <div class="col-md-4">
+                                {{field.label_tag}} 
+                                {{field}} <span class="errors">{{field.errors|striptags}}</span>
+                            </div>
+                        {% endfor %}
+                        </div>                                                  
+                        <input type="submit" class="btn btn-primary form-control mt-3" value="Predict diamond price">
+                        <span class="errors">{{field.non_field_errors|striptags}}</span>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             
         </div>
+        {% if messages %}
+            {% for message in messages %}
+                <h3 class="text-center mt-3 text-danger">{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+
+        <span class="float-end">want to train your model ? <a href="{% url 'training' %}">click here</a></span>
     </div>
     
 

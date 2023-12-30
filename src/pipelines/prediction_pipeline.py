@@ -54,7 +54,7 @@ class CustomData:
             }
             df=pd.DataFrame(custom_data_input_dict)
             logging.info("Data Frame created")
-            logging.info(f"{df.head(2).to_string()}")
+            logging.info(f"{df.head(1).to_string()}")
             return df 
         except Exception as e:
             logging.info("error occurred while getting data as dataframe")
