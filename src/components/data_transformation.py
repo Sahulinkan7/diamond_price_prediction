@@ -92,7 +92,7 @@ class DataTransformation:
             save_object(file_path=self.data_transformation_config.preprocessor_obj_file_path,
                         obj=preprocessing_object)
             logging.info('preprocessor object file created and saved')
-            
+            logging.info('**************** Data Transformation completed ******************')
             return (
                 train_arr,
                 test_arr,

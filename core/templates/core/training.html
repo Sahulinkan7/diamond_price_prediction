@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <div class="row mt-3">
+        <div class="col"></div>
+        <div class="col">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary form-control" value="Start Model Training">
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+    
+{% endblock content %}
